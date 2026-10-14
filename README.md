@@ -1,24 +1,27 @@
 # Organizador de archivos
 
-Script en Python que organiza automáticamente los archivos de la carpeta `Downloads` según su extensión.
+Script en Python que organiza archivos automáticamente por extensión, utilizando carpetas de categorías.
 
 ## Descripción
 
-Este proyecto recorre la carpeta `Downloads`, identifica los archivos y los mueve a diferentes carpetas según el tipo de archivo.
+El organizador recorre la carpeta `Downloads` del usuario actual, identifica los archivos y determina su destino según la extensión.
 
-Los formatos que no están definidos en una categoría se envían a `Otros`.
+Los archivos que no coinciden con ninguna categoría se asignan a `Otros`.
 
-El programa también evita sobrescribir archivos cuando encuentra un nombre duplicado.
+El programa incluye un modo de simulación para revisar los destinos previstos antes de mover archivos.
 
 ## Características
 
-- Organiza archivos automáticamente por extensión.
+- Organiza archivos por extensión.
 - Reconoce extensiones en mayúsculas y minúsculas.
 - Crea las carpetas de destino cuando son necesarias.
-- Evita sobrescribir archivos duplicados.
-- Envía archivos desconocidos a `Otros`.
-- Ignora archivos definidos en una lista de exclusión.
-- Ignora carpetas y procesa solamente archivos.
+- Evita sobrescribir archivos con nombres duplicados.
+- Envía formatos desconocidos a `Otros`.
+- Ignora los archivos definidos en una lista de exclusión.
+- Procesa archivos e ignora carpetas.
+- Incluye un modo de simulación activado por defecto.
+- Maneja errores comunes del sistema de archivos.
+- Muestra un resumen de archivos procesados y fallidos.
 
 ## Categorías
 
@@ -37,7 +40,7 @@ El programa también evita sobrescribir archivos cuando encuentra un nombre dupl
 
 ## Requisitos
 
-- Python 3.10 o superior
+- Python 3.10 o superior.
 - No requiere librerías externas.
 
 El proyecto utiliza principalmente la biblioteca estándar `pathlib`.
@@ -46,26 +49,43 @@ El proyecto utiliza principalmente la biblioteca estándar `pathlib`.
 
 1. Descarga o clona el repositorio.
 2. Abre una terminal en la carpeta del proyecto.
-3. Ejecuta:
+3. Ejecuta el programa:
 
-```bash
-python main.py
+   ```bash
+   python main.py
+   ```
+
+Por defecto, el programa utiliza la carpeta `Downloads` del usuario actual y ejecuta una simulación. Durante esta simulación, muestra los destinos previstos sin mover archivos.
+
+### Activar el movimiento real
+
+Para organizar los archivos realmente, abre `main.py` y cambia:
+
+```python
+simulacion = True
 ```
 
-El programa trabajará sobre la carpeta `Downloads` del usuario actual.
+por:
 
-> Se recomienda revisar los archivos de `Downloads` antes de ejecutar el programa, ya que los archivos serán movidos automáticamente.
+```python
+simulacion = False
+```
 
-## Tecnologías utilizadas
+Guarda el archivo y vuelve a ejecutar el programa.
 
-- Python
-- `pathlib`
-- Funciones
-- Bucles `for` y `while`
-- Condicionales
-- Listas
-- Diccionarios
-- Manejo de rutas y archivos
+**Precaución:** en modo real, los archivos se moverán de la carpeta seleccionada a las categorías correspondientes. Se recomienda probar primero con una carpeta que contenga archivos de prueba.
+
+## Tecnologías y conceptos utilizados
+
+- Python.
+- `pathlib`.
+- Funciones y parámetros.
+- Bucles `for` y `while`.
+- Condicionales.
+- Listas y diccionarios.
+- Conjuntos (`set`) para registrar destinos simulados.
+- Manejo de rutas y archivos.
+- Manejo de excepciones con `try` y `except`.
 
 ## Qué aprendí con este proyecto
 
@@ -76,25 +96,24 @@ Durante su desarrollo practiqué:
 - Trabajar con rutas mediante `pathlib`.
 - Recorrer archivos y carpetas.
 - Obtener nombres y extensiones de archivos.
-- Crear y utilizar funciones.
-- Utilizar diccionarios para relacionar extensiones con carpetas.
-- Manejar archivos duplicados.
-- Separar diferentes responsabilidades dentro del programa.
-- Organizar y documentar un proyecto para GitHub.
+- Crear funciones con responsabilidades específicas.
+- Relacionar extensiones con categorías mediante diccionarios.
+- Evitar conflictos con nombres duplicados.
+- Controlar errores del sistema de archivos.
+- Separar responsabilidades y mejorar la estructura del código.
+- Probar el programa en simulación y con movimientos reales.
+- Documentar un proyecto para GitHub.
 
 ## Mejoras futuras
 
-Algunas mejoras que podrían añadirse en futuras versiones:
-
-- Modo de simulación para mostrar qué archivos se moverían sin modificarlos.
-- Archivo de configuración para personalizar las categorías.
-- Registro de los archivos organizados.
-- Interfaz gráfica.
-- Más formatos y categorías.
-- Opciones para elegir qué carpeta organizar.
+- Permitir elegir la carpeta desde la terminal.
+- Añadir un archivo de configuración para personalizar categorías y extensiones.
+- Registrar las operaciones en un archivo de historial.
+- Crear una interfaz gráfica de escritorio.
+- Ampliar las categorías y los formatos compatibles.
 
 ## Estado del proyecto
 
-**Versión 1.0 - Funcional**
+**Versión 1.1 - En desarrollo**
 
-El organizador cumple actualmente con su función principal de clasificar y mover archivos automáticamente.
+Esta versión incorpora simulación, manejo básico de errores y un resumen de resultados. El proyecto continúa en desarrollo como práctica de programación y parte de mi portafolio.
