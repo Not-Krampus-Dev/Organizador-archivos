@@ -1,0 +1,57 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# --- Entornos virtuales ---
+.venv/
+venv/
+env/
+ENV/
+
+# --- PyInstaller (generados, reproducibles con la spec) ---
+App/build/
+App/dist/
+*.manifest
+*.spec.bak
+
+# --- Configuración personal / regenerable ---
+App/config.json
+
+# --- Logs y temporales ---
+*.log
+*.tmp
+*.bak
+*.swp
+logs/
+temp/
+.tmp/
+
+# --- IDEs y editores ---
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+Thumbs.db
+desktop.ini
+
+# --- Sistema ---
+.DS_Store
+
+# --- Artefactos de publicación (se conservan en local para adjuntar
+# --- a la GitHub Release; NO deben entrar en el historial Git) ---
+Distribucion/Organizador-de-Archivos-*.zip
+Distribucion/SHA256SUMS.txt
+
+# --- Material de pruebas pesado del script original (no es parte de la
+# --- app; los archivos permanecen solo en local) ---
+Organizador/archivos_prueba/
+
+# --- Repositorio Git interno del script original, renombrado a respaldo
+# --- para poder versionar Organizador/ como archivos normales ---
+Organizador/.git_respaldo/
+**/.git_respaldo/
