@@ -1,8 +1,9 @@
 # Organizador de Archivos
 
-Aplicación de escritorio para Windows que ordena archivos en carpetas por
-categoría (imágenes, documentos, música, vídeos…), con vista previa del plan
-completo **antes** de mover nada.
+Aplicación de escritorio desarrollada con **Python** y **PySide6**,
+distribuida como **ejecutable portátil para Windows**, que ordena archivos
+en carpetas por categoría (imágenes, documentos, música, vídeos…), con
+vista previa del plan completo **antes** de mover nada.
 
 Es la evolución con interfaz gráfica de un script de consola anterior
 (carpeta `Organizador/`), conservado en este repositorio como primera
@@ -10,8 +11,8 @@ versión del proyecto.
 
 > 📦 **Descarga para Windows:** el ejecutable portátil
 > (`Organizador-de-Archivos-v1.0-Windows.zip`) está disponible en la
-> sección **Releases** de este repositorio. El ZIP incluye su checksum
-> SHA-256 para verificar la descarga.
+> sección [**Releases**](../../releases/latest) de este repositorio.
+> El ZIP incluye su checksum SHA-256 para verificar la descarga.
 
 *Este es un proyecto personal de práctica y portafolio de programación:
 no es un producto comercial.*
@@ -38,7 +39,7 @@ no es un producto comercial.*
   ignorados por nombre exacto.
 - Interfaz en **español, inglés y japonés**, cambiable en caliente sin
   reiniciar.
-- Preferencias e idioma persistidos entre sesiones (`config.json`).
+- Preferencias e idioma persistidos entre sesiones.
 
 ## Capturas de pantalla
 
@@ -77,8 +78,7 @@ Interfaz disponible en español, inglés y japonés, cambiable en caliente:
 ```
 .
 ├── docs/capturas/          Capturas de pantalla del README
-├── Organizador/            Script original de consola (v1.1) + material
-│                           de pruebas del proyecto (no forma parte de la app)
+├── Organizador/            Script original de consola (v1.1)
 ├── App/                    Aplicación de escritorio
 │   ├── main.py             Punto de entrada
 │   ├── gui/                Interfaz PySide6
